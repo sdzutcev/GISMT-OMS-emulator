@@ -1,0 +1,14 @@
+{
+    // Режим логирования, "console", "file", "fluent", "entity"
+    logMode: "file",
+
+    // Уровень логирования: "trace", "debug", "info", "warn", "error"
+    logLevel: "debug",
+
+    // Адрес и порт сервера fluentd
+    fluentdHost: "1.1.1.1",
+    fluentdPort: 1234,
+
+    logEntity: "apidb.logs@dmzdb"
+
+}

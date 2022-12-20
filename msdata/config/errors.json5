@@ -1,0 +1,584 @@
+{
+    // Язык по умолчанию. Работает без перезагрузки микросервиса.
+    userDefaultLang: 'ru',
+    
+    // Список ошибок и сообщений. Работает без перезагрузки микросервиса.
+    errors: {
+
+        'E_ServerError': {
+            ru: {
+                userMessage: "Ошибка сервера",
+                logMessage: "Общая / неопределенная ошибка сервера",
+            },
+            httpCode: 500
+        },
+
+        'E_NotFound': {
+            ru: {
+                userMessage: "Запрошенный ресурс не найден на сервере",
+                logMessage: "Запрошенный ресурс не найден на сервере",
+            },
+            httpCode: 404
+        },
+
+        'E_InvalidSession': {
+            ru: {
+                userMessage: "Сессия пользователя недействительна",
+                logMessage: "Сессия пользователя недействительна",
+            },
+            httpCode: 404
+        },
+
+        'E_SessionTokenRequired': {
+            ru: {
+                userMessage: "Для выполнения этого запроса необходим токен сессии",
+                logMessage: "Для выполнения этого запроса необходим токен сессии",
+            },
+            httpCode: 403
+        },
+
+        'E_LockError': {
+            ru: {
+                userMessage: "Ошибка блокировки объекта",
+                logMessage: "Ошибка блокировки объекта",
+            },
+            httpCode: 500
+        },
+
+        'E_EventError': {
+            ru: {
+                userMessage: "Ошибка обработки событий",
+                logMessage: "Ошибка обработки событий",
+            },
+            httpCode: 500
+        },
+
+        'E_ModuleError': {
+            ru: {
+                userMessage: "Ошибка в динамическом модуле",
+                logMessage: "Общая / неопределенная ошибка в динамическом модуле",
+            },
+            httpCode: 500
+        },
+
+        'E_ConfigurationError': {
+            ru: {
+                userMessage: "Ошибка в конфигурации",
+                logMessage: "Общая / неопределенная ошибка в конфигурации",
+            },
+            httpCode: 500
+        },
+
+        'E_NotImplemented': {
+            ru: {
+                userMessage: "Функция не реализована",
+                logMessage: "Функция не реализована",
+            },
+            httpCode: 501
+        },
+
+        'E_FunctionNotFound': {
+            ru: {
+                userMessage: "Функция не найдена",
+                logMessage: "Функция не найдена",
+            },
+            httpCode: 404
+        },
+
+        'E_IncorrectParams': {
+            ru: {
+                userMessage: "Некорректные параметры",
+                logMessage: "Некорректные параметры для API или функции",
+            },
+            httpCode: 400
+        },
+
+        'E_UrlNotFound': {
+            ru: {
+                userMessage: "Объект не найден по URL",
+                logMessage: "Объект не найден по URL",
+            },
+            httpCode: 404
+        },
+
+        'E_TemplateError': {
+            ru: {
+                userMessage: "Ошибка при генерации шаблона",
+                logMessage: "Ошибка при генерации шаблона",
+            },
+            httpCode: 500
+        },
+
+        'E_ApiEmptyResponse': {
+            ru: {
+                userMessage: "Вызов API вернул пустой ответ",
+                logMessage: "Вызов API вернул пустой ответ",
+            },
+            httpCode: 500
+        },
+
+        'E_SecretsError': {
+            ru: {
+                userMessage: "Ошибка хранилища секретов",
+                logMessage: "Ошибка хранилища секретов",
+            },
+            httpCode: 500
+        },
+
+        'E_DatabaseError': {
+            ru: {
+                userMessage: "Ошибка БД",
+                logMessage: "Ошибка БД",
+            },
+            httpCode: 500
+        },
+
+        'E_FunctionError': {
+            ru: {
+                userMessage: "Ошибка при вызове серверной функции",
+                logMessage: "Ошибка при вызове серверной функции",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidColumnType': {
+            ru: {
+                userMessage: "Неправильный тип колонки в таблице БД",
+                logMessage: "Неправильный тип колонки в таблице БД",
+            },
+            httpCode: 500
+        },
+
+        'E_UniqueIndexNotFound': {
+            ru: {
+                userMessage: "Отсутствует уникальный индекс",
+                logMessage: "Отсутствует уникальный индекс",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidColumnDefaultValue': {
+            ru: {
+                userMessage: "Неправильное значение по умолчанию у колонки",
+                logMessage: "Неправильное значение по умолчанию у колонки",
+            },
+            httpCode: 500
+        },
+        
+        'E_TriggerNotFound': {
+            ru: {
+                userMessage: "Триггер не найден",
+                logMessage: "Триггер не найден",
+            },
+            httpCode: 500
+        },
+
+        'E_IndexNotFound': {
+            ru: {
+                userMessage: "Индекс не найден",
+                logMessage: "Индекс не найден",
+            },
+            httpCode: 500
+        },
+
+        'E_SequenceNotFound': {
+            ru: {
+                userMessage: "Сиквенс не найден",
+                logMessage: "Сиквенс не найден",
+            },
+            httpCode: 500
+        },
+
+        'E_ColumnNotFound': {
+            ru: {
+                userMessage: "Колонка не найдена",
+                logMessage: "Колонка не найдена",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidColumnLength': {
+            ru: {
+                userMessage: "Некорректная длина колонки",
+                logMessage: "Некорректная длина колонки",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidNotNullProperty': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута NotNull",
+                logMessage: "Некорректное значение аттрибута NotNull",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidIsBigProperty': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута IsBig",
+                logMessage: "Некорректное значение аттрибута IsBig",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidColumnInfo': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута info",
+                logMessage: "Некорректное значение аттрибута info",
+            },
+            httpCode: 500
+        },
+        
+        'E_InvalidUniqueProperty': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута unique",
+                logMessage: "Некорректное значение аттрибута unique",
+            },
+            httpCode: 500
+        },
+        
+        'E_InvalidIndexedProperty': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута indexed",
+                logMessage: "Некорректное значение аттрибута indexed",
+            },
+            httpCode: 500
+        },
+
+        'E_InvalidRoleProperty': {
+            ru: {
+                userMessage: "Некорректное значение аттрибута role",
+                logMessage: "Некорректное значение аттрибута role",
+            },
+            httpCode: 500
+        },
+    
+        'E_UserAlreadyExists': {
+            ru: {
+                userMessage: "Пользователь с таким логином уже существует",
+                logMessage: "Пользователь с таким логином уже существует",
+            },
+            httpCode: 500
+        },
+
+
+        'E_ProductAlreadyExists': {
+            ru: {
+                userMessage: "Продукт с таким названием уже существует",
+                logMessage: "Продукт с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+
+        'E_MarketAlreadyExists': {
+            ru: {
+                userMessage: "Рынок с таким названием уже существует",
+                logMessage: "Рынок с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+        'E_CodesGeneratorAlreadyExists': {
+            ru: {
+                userMessage: "Генератор кода с таким названием уже существует",
+                logMessage: "Генератор кода с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+        'E_DeviceAlreadyExists': {
+            ru: {
+                userMessage: "Устройство с таким названием уже существует",
+                logMessage: "Устройство с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+        'E_LineAlreadyExists': {
+            ru: {
+                userMessage: "Линия с таким названием уже существует",
+                logMessage: "Линия с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+        'E_TemplateAlreadyExists': {
+            ru: {
+                userMessage: "Шаблон с таким названием уже существует",
+                logMessage: "Шаблон с таким названием уже существует",
+            },
+            httpCode: 400
+        },
+
+
+        'E_UserNotFound': {
+            ru: {
+                userMessage: "Пользователь не найден",
+                logMessage: "Пользователь не найден",
+            },
+            httpCode: 500
+        },
+
+        'E_FileNotFound': {
+            ru: {
+                userMessage: "Файл не найден",
+                logMessage: "Файл не найден",
+            },
+            httpCode: 404
+        },
+
+        'E_AssemblyNotAllowed': {
+            ru: {
+                userMessage: "Данные недоступны для этого приложения",
+                logMessage: "Данные недоступны для этого приложения",
+            },
+            en: {
+                userMessage: "Data not available for this app",
+                logMessage: "Data not available for this app",
+            },
+            httpCode: 403
+        },
+
+        'E_MethodNotAllowed': {
+            ru: {
+                userMessage: "Доступ запрещен",
+                logMessage: "У приложения нет доступа к методу API",
+            },
+            httpCode: 403
+        },
+
+        'E_AuthError': {
+            ru: {
+                userMessage: "Ошибка аутентификации",
+                logMessage: "Ошибка аутентификации",
+            },
+            httpCode: 403
+        },
+
+        'E_IncorrectLoginOrPassword': {
+            ru: {
+                userMessage: "Неверное имя пользователя или пароль",
+                logMessage: "Неверное имя пользователя или пароль",
+            },
+            httpCode: 403
+        },
+
+
+        'E_IncorrectOldPassword': {
+            ru: {
+                userMessage: "Неверный пароль",
+                logMessage: "Неверный пароль",
+            },
+            httpCode: 400
+        },
+
+        'E_SamePasswordsError': {
+            ru: {
+                userMessage: "Старый и новый пароль одинаковый",
+                logMessage: "Старый и новый пароль одинаковый",
+            },
+            httpCode: 400
+        },
+
+        'E_OTPAuthError': {
+            ru: {
+                userMessage: "Ошибка проверки OTP кода",
+                logMessage: "Ошибка проверки OTP кода",
+            },
+            httpCode: 403
+        },
+
+        'E_UserSoftBlock': {
+            ru: {
+                userMessage: "Пользователь временно заблокирован",
+                logMessage: "Пользователь временно заблокирован",
+            },
+            httpCode: 403
+        },
+
+        'E_UserBlocked': {
+            ru: {
+                userMessage: "Пользователь заблокирован",
+                logMessage: "Пользователь заблокирован",
+            },
+            httpCode: 403
+        },
+
+        'E_ProductRelation': {
+            ru: {
+                userMessage: "Продукт связан с заказом, удаление невозможно",
+                logMessage: "Продукт связан с заказом, удаление невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_DeviceRelation': {
+            ru: {
+                userMessage: "Оборудование связано с линией, удаление невозможно",
+                logMessage: "Оборудование связано с линией, удаление невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_MarketRelation': {
+            ru: {
+                userMessage: "Рынок связан с продуктом, удаление невозможно",
+                logMessage: "Рынок связан с продуктом, удаление невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_ProdOrderLineRelation': {
+            ru: {
+                userMessage: "Линия связана с производственным заказом, удаление невозможно",
+                logMessage: "Линия связана с производственным заказом, удаление невозможно",
+            },
+            httpCode: 400
+        },
+
+
+        'E_LastAdminDeleting': {
+            ru: {
+                userMessage: "Последний пользователь с правами админа, удаление невозможно",
+                logMessage: "Последний пользователь с правами админа, удаление невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_FirstUserNotAdmin': {
+            ru: {
+                userMessage: "Первый пользователь должен быть с правами админа, создание невозможно",
+                logMessage: "Первый пользователь должен быть с правами админа, создание невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_ProductionOrderNumberIsAlreadyExist': {
+            ru: {
+                userMessage: "Производственный заказ c таким номером уже существует, создание невозможно",
+                logMessage: "Производственный заказ c таким номером уже существует, создание невозможно",
+            },
+            httpCode: 400
+        },
+
+
+        'E_CustomVariableIsAlreadyExist': {
+            ru: {
+                userMessage: "Пользовательская переменная c таким значением уже существует, создание невозможно",
+                logMessage: "Пользовательская переменная c таким значением уже существует, создание невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_CannotStartProduction': {
+            ru: {
+                userMessage: "Запустисть заказ невозможно",
+                logMessage: "Запустисть заказ невозможно",
+            },
+            httpCode: 400
+        },
+
+        'E_OrderNotFound': {
+            ru: {
+                userMessage: "Производственный заказ не найден",
+                logMessage: "Производственный заказ не найден",
+            },
+            httpCode: 400
+        },
+
+        'E_DisableSystemVarDelete': {
+            ru: {
+                userMessage: "Невозможно удалить системную переменную",
+                logMessage: "Невозможно удалить системную переменную",
+            },
+            httpCode: 404
+        },
+
+        'E_DeviceOnAnotherLine': {
+            ru: {
+                userMessage: "Оборудование принадлежит другой линии",
+                logMessage: "Оборудование принадлежит другой линии",
+            },
+            httpCode: 400
+        },
+
+        'E_ResetTokenExpired': {
+            ru: {
+                userMessage: "Токен сессии для сброса пароля истек",
+                logMessage: "Токен сессии для сброса пароля истек"
+            },
+            httpCode: 400
+        },
+
+        'E_LineIsNotFree': {
+            ru: {
+                userMessage: "На линии выполняется другой заказ",
+                logMessage: "На линии выполняется другой заказ"
+            },
+            httpCode: 400
+        },
+
+        'E_NotUniqueLinerPin': {
+            ru: {
+                userMessage: "Введенный pin не является уникальным",
+                logMessage: "Введенный pin не является уникальным",
+            },
+            httpCode: 400
+        },
+
+        'E_LinerAlreadyExists': {
+            ru: {
+                userMessage: "Линия с таким pin уже активна",
+                logMessage: "Линия с таким pin уже активна",
+            },
+            httpCode: 403
+        },
+
+        'E_LinerNotFound': {
+            ru: {
+                userMessage: "Линия не найдена",
+                logMessage: "Линия не найдена",
+            },
+            httpCode: 403
+        },
+
+        'E_LinerAlreadyActivated': {
+            ru: {
+                userMessage: "Линия с таким pin уже активирована и привязана к лайнеру",
+                logMessage: "Линия с таким pin уже активирована и привязана к лайнеру",
+            },
+            httpCode: 403
+        },
+
+        'E_LinerDeactivationNotPossible': {
+            ru: {
+                userMessage: "На данной линии выполняется заказ. Деактивация невозможна",
+                logMessage: "На данной линии выполняется заказ. Деактивация невозможна"
+            },
+            httpCode: 400
+        },
+
+        'E_CodesGeneratorRelation': {
+            ru: {
+                userMessage: "Генератор связан с продуктом. Удаление невозможно",
+                logMessage: "Генератор связан с продуктом. Удаление невозможно"
+            },
+            httpCode: 400
+        },
+        'E_DeviceNotSelected' : {
+            ru: {
+                userMessage: "Должно быть выбрано хоть одно оборудование для линии",
+                logMessage: "Должно быть выбрано хоть одно оборудование для линии"
+            },
+            httpCode: 400
+        },
+        'E_DeviceNotAvailable': {
+            ru: {
+                userMessage: "Оборудование не доступно, оборудование для каждого уровня упаковки должно отличаться",
+                logMessage: "Оборудование не доступно, оборудование для каждого уровня упаковки должно отличаться"
+            },
+            httpCode: 400
+        }
+    }
+}

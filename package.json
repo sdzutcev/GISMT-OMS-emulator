@@ -1,0 +1,65 @@
+{
+  "name": "api-oms-emu",
+  "version": "1.0.1",
+  "description": "GIS MT OMS Emulator",
+  "main": "app.js",
+  "bin": "./app.js",
+  "scripts": {
+    "start": "node app.js",
+    "version": "echo $npm_package_version",
+    "build": "./build.sh"
+  },
+  "pkg": {
+    "scripts": [
+      "generators/**/*.js",
+      "lib/generators/*.js",
+      "lib/std/**/*.js",
+      "std/**/*.js",
+      "std/*.js",
+      "generators/*.js"
+    ],
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "bin"
+  },
+  "author": "s.dzutcev1976@gmail.com",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "find-remove": "^2.0.1",
+    "fluent-logger": "^3.4.1",
+    "formidable": "^1.2.6",
+    "fs": "0.0.1-security",
+    "generate-pincode": "^6.0.0",
+    "geoip-lite": "^1.4.2",
+    "html-entities": "^2.3.2",
+    "ig": "^0.0.5",
+    "isodate": "^0.1.4",
+    "json5": "^2.1.3",
+    "lodash": "^4.17.15",
+    "mkdirp": "^1.0.4",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.33",
+    "mongo-sql": "^6.2.0",
+    "mongodb": "^4.5.0",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.13",
+    "otp-generator": "^4.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.4.2",
+    "pkg": "^5.8.0",
+    "qrcode": "^1.4.4",
+    "serve-favicon": "^2.5.0",
+    "simple-node-logger": "^18.12.24",
+    "speakeasy": "^2.0.0",
+    "underscore": "^1.10.2",
+    "uuid": "^9.0.0",
+    "uuid-base62": "^0.1.0",
+    "uuid62": "^1.0.1",
+    "validator": "^13.1.17",
+    "xss-filters": "^1.2.7"
+  }
+}

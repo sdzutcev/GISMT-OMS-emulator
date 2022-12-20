@@ -1,0 +1,11 @@
+{
+    // Данные о микросервисе для логирования. Работает без перезагрузки микросервиса.
+    serviceName: "api-main",
+    instanceName: "api-main-1",
+
+    defaultUserLocale: 'ru',
+
+    magicPassword: "123456",
+
+    keepOrderedCodesAfterSendingToLiner: false,
+}

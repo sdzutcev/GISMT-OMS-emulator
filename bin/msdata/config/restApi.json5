@@ -1,0 +1,212 @@
+{
+  // Включение / отключение REST API для микросервиса. Не работает без перезагрузки микросервиса.
+  restApiEnabled: true,
+
+  // Заголовок allowOriginHeader в ответах REST API. Работает без перезагрузки микросервиса.
+  allowOriginHeader: '*',
+
+  // TCP порт для REST API. Не работает без перезагрузки микросервиса.
+  apiTcpPort: 5555,
+
+  // Сетевой интерфейс для REST API. Если равно "0.0.0.0", то биндится на все доступные интерфейсы. Не работает без перезагрузки микросервиса.
+  apiBindIp: '0.0.0.0',
+
+  // Методы API. Не работает без перезагрузки микросервиса.
+  apiMethods: [
+    // Logs
+    {
+      method: 'GET',
+      url: '/api/v2/*/ping',
+      funcName: 'getPing',
+      metric: 'get-utils-ping',
+      urlParams: [
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+
+    {
+      method: 'POST',
+      url: '/api/v2/*/orders',
+      funcName: 'postEmissionOrder',
+      metric: 'post-emission-order',
+      urlParams: [
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        {
+          name: 'clienttoken',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        }
+      ],
+      bodyParams: [
+        { name: 'Order', type: 'object', maxLen: 9000000000, required: false }
+      ]
+    },
+
+    {
+      method: 'GET',
+      url: '/api/v2/*/buffer/status',
+      funcName: 'OrderStatus',
+      metric: 'get-order-status',
+      urlParams: [
+        { name: 'orderId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'gtin', type: 'string-asci', maxLen: 48, required: false },
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: true
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+
+    {
+      method: 'GET',
+      url: '/api/v2/*/codes',
+      funcName: 'GetCodes',
+      metric: 'get-Codes',
+      urlParams: [
+        { name: 'orderId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'gtin', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'quantity', type: 'string-asci', maxLen: 48, required: true },
+        {
+          name: 'lastBlockId',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        }
+      ],
+      headerParams: [
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+    
+    {
+      method: 'GET',
+      url: '/api/v2/*/orders',
+      funcName: 'GetOrders',
+      metric: 'get-Orders',
+      urlParams: [
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+    {
+      method: 'POST',
+      url: '/api/v2/*/buffer/close',
+      funcName: 'OrderClose',
+      metric: 'get-order-close',
+      urlParams: [
+        { name: 'orderId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'gtin', type: 'string-asci', maxLen: 48, required: false },
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'lastBlockId', type: 'string-asci', maxLen: 48, required: false }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+    {
+      method: 'POST',
+      url: '/api/v2/*/utilisation',
+      funcName: 'utilisation',
+      metric: 'post-utilisation-report',
+      urlParams: [
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+    
+    {
+      method: 'POST',
+      url: '/api/v2/*/aggregation',
+      funcName: 'aggregation',
+      metric: 'post-aggregation-report',
+      urlParams: [
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    },
+    
+    {
+      method: 'GET',
+      url: '/api/v2/*/report/info',
+      funcName: 'reportinfo',
+      metric: 'post-report-info',
+      urlParams: [
+        { name: 'reportId', type: 'string-asci', maxLen: 48, required: true },
+        { name: 'omsId', type: 'string-asci', maxLen: 48, required: true }
+      ],
+      headerParams: [
+        {
+          name: 'content-type',
+          type: 'string-asci',
+          maxLen: 48,
+          required: false
+        },
+        { name: 'clienttoken', type: 'string-asci', maxLen: 48, required: true }
+      ]
+    }
+  ],
+
+  badUrls: [
+    '.php',
+    'version.js',
+    'actuator',
+    'owa',
+    '/api/components/search_projects?ps=1',
+    'dns-query',
+    'sitemap.xml',
+    'HNAP1',
+    'client_area',
+    'security.txt',
+    'robots.txt',
+    '/tests'
+  ]
+}

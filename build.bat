@@ -1,0 +1,1 @@
+pkg --config package.json --compress GZip app.js --output ./bin/OMS-Emul-1.1.1.exe 
